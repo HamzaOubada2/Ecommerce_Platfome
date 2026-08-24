@@ -1,4 +1,5 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { Order } from "src/orders/entities/orders.entity";
+import { Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
 export enum Role {
     ADMIN = 'ADMIN',
@@ -29,8 +30,7 @@ export class User {
     @UpdateDateColumn()
     updatedAt: Date;
 
-    /*
     @OneToMany(() => Order, (order) => order.user)
     orders: Order[]
-    */
+
 }
