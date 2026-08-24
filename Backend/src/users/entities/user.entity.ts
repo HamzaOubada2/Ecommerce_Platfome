@@ -21,8 +21,8 @@ export class User {
     role:Role;
 
 
-    @Column({nullable: true})
-    refreshToken:string;
+    @Column({ type: 'varchar', nullable: true })
+    refreshToken: string | null;
 
     @CreateDateColumn()
     createdAt: Date;
