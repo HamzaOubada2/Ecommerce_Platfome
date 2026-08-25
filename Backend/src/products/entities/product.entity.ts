@@ -1,4 +1,5 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { Category } from "src/categories/entities/category.entity";
+import { Column, CreateDateColumn, Entity, ManyToMany, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
 
 @Entity('products')
@@ -18,6 +19,9 @@ export class Product{
 
     @Column({ type: 'int', default: 0 })
     stock:number;
+
+    @ManyToOne(() => Category, (category) => category.products, {onDelete: 'SET NULL'})
+    category: Category;
 
     @CreateDateColumn()
     createdAt:Date;
