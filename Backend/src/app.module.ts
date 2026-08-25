@@ -6,6 +6,7 @@ import { Product } from './products/entities/product.entity';
 import { Order } from './orders/entities/orders.entity';
 import { AuthModule } from './auth/auth.module';
 import { ProductsModule } from './products/products.module';
+import { Category } from './categories/entities/category.entity';
 @Module({
     imports: [
         ConfigModule.forRoot({isGlobal: true}),
@@ -19,7 +20,7 @@ import { ProductsModule } from './products/products.module';
                 username: config.get<string>('DB_USER'),
                 password: config.get<string>('DB_PASSWORD'),
                 database: config.get<string>('DB_NAME'),
-                entities: [User, Product, Order],
+                entities: [User, Product, Order,Category],
                 synchronize: true,
             })
         }),

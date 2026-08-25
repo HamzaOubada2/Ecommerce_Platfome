@@ -3,7 +3,7 @@ import { ProductService } from "./products.service";
 import { CreateProductDto } from "./dto/create-product.dto";
 import { Role } from "src/users/entities/user.entity";
 import { Roles } from "src/auth/decorators/roles.decorator";
-import { AuthGuard } from "@nestjs/passport";
+import { AuthGuard } from "src/auth/guard/auth.guard";
 import { RolesGuard } from "src/auth/guard/roles.guard";
 
 
