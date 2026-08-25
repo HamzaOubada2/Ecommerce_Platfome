@@ -1,14 +1,14 @@
-import { Body, Post, Req, UseGuards } from "@nestjs/common";
+import { Body, Controller, Post, Req, UseGuards } from "@nestjs/common";
 import { AuthService } from "./auth.service";
 import { RegisterDto } from "./dto/register.dto";
 import { LoginDto } from "./dto/login.dto";
-import { AuthGuard } from "@nestjs/passport";
+import { AuthGuard } from "./guard/auth.guard";
 import { RolesGuard } from "./guard/roles.guard";
 import { Roles } from "./decorators/roles.decorator";
 import { Role } from "src/users/entities/user.entity";
 
 
-
+@Controller('auth')
 export class AuthController {
     constructor(private readonly authService: AuthService){};
 

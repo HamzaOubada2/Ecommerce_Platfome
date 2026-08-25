@@ -1,9 +1,10 @@
-import { CanActivate, ExecutionContext, ForbiddenException } from "@nestjs/common";
+import { CanActivate, ExecutionContext, ForbiddenException, Injectable } from "@nestjs/common";
 import { Reflector } from "@nestjs/core";
 import { Observable } from "rxjs";
 import { Role } from "src/users/entities/user.entity";
 
 
+@Injectable()
 export class RolesGuard implements CanActivate {
     constructor(private reflector: Reflector){} // Role => Read Meta Data
 

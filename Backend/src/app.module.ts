@@ -4,6 +4,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './users/entities/user.entity';
 import { Product } from './products/entities/product.entity';
 import { Order } from './orders/entities/orders.entity';
+import { AuthModule } from './auth/auth.module';
 @Module({
     imports: [
         ConfigModule.forRoot({isGlobal: true}),
@@ -20,7 +21,8 @@ import { Order } from './orders/entities/orders.entity';
                 entities: [User, Product, Order],
                 synchronize: true,
             })
-        })
+        }),
+        AuthModule
     ]
 })
 export class AppModule {}
