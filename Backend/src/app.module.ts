@@ -5,6 +5,7 @@ import { User } from './users/entities/user.entity';
 import { Product } from './products/entities/product.entity';
 import { Order } from './orders/entities/orders.entity';
 import { AuthModule } from './auth/auth.module';
+import { ProductsModule } from './products/products.module';
 @Module({
     imports: [
         ConfigModule.forRoot({isGlobal: true}),
@@ -22,7 +23,8 @@ import { AuthModule } from './auth/auth.module';
                 synchronize: true,
             })
         }),
-        AuthModule
+        AuthModule,
+        ProductsModule
     ]
 })
 export class AppModule {}
