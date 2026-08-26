@@ -9,7 +9,10 @@ async function bootstrap() {
     new ValidationPipe({
       whitelist: true,  // removes properties not in the DTO
       forbidNonWhitelisted: true, // throws error if extra properties are sent
-      transform: true // auto-transforms payloads to DTO instances
+      transform: true, // auto-transforms payloads to DTO instances
+      transformOptions: {
+        enableImplicitConversion: true
+      }
     })
   )
 

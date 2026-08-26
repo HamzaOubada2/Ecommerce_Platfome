@@ -26,4 +26,8 @@ export class CreateProductDto {
     @IsOptional()
     @IsUUID()
     categoryId?:string;
+
+    @IsOptional()
+    @IsString()
+  imageUrl?: string;
 }
