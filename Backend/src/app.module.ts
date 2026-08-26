@@ -7,6 +7,7 @@ import { Order } from './orders/entities/orders.entity';
 import { AuthModule } from './auth/auth.module';
 import { ProductsModule } from './products/products.module';
 import { Category } from './categories/entities/category.entity';
+import { OrdersModule } from './orders/orders.module';
 @Module({
     imports: [
         ConfigModule.forRoot({isGlobal: true}),
@@ -25,7 +26,8 @@ import { Category } from './categories/entities/category.entity';
             })
         }),
         AuthModule,
-        ProductsModule
+        ProductsModule,
+        OrdersModule
     ]
 })
 export class AppModule {}
