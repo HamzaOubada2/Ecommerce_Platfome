@@ -13,14 +13,14 @@ export class Order {
     @PrimaryGeneratedColumn('uuid')
     id:string;
 
-    @ManyToOne(() => User)
+    @ManyToOne(() => User, (user) => user.orders)
     user: User;
 
     @OneToMany(() => OrderItem, (item) => item.order, {cascade: true})
     items: OrderItem[];
 
     @Column({type: 'decimal', precision: 10, scale: 2})
-    totalAmount = number;
+    totalAmount: number;
 
 
     @Column({type: 'enum', enum: OrderStatus, default: OrderStatus.PENDING})

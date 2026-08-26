@@ -3,11 +3,13 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './users/entities/user.entity';
 import { Product } from './products/entities/product.entity';
-import { Order } from './orders/entities/orders.entity';
+import { Order } from './orders/entities/order.entity';
 import { AuthModule } from './auth/auth.module';
 import { ProductsModule } from './products/products.module';
 import { Category } from './categories/entities/category.entity';
+import { OrderItem } from './orders/entities/order-item.entity';
 import { OrdersModule } from './orders/orders.module';
+
 @Module({
     imports: [
         ConfigModule.forRoot({isGlobal: true}),
@@ -21,7 +23,7 @@ import { OrdersModule } from './orders/orders.module';
                 username: config.get<string>('DB_USER'),
                 password: config.get<string>('DB_PASSWORD'),
                 database: config.get<string>('DB_NAME'),
-                entities: [User, Product, Order,Category],
+                entities: [User, Product, Order, OrderItem, Category],
                 synchronize: true,
             })
         }),

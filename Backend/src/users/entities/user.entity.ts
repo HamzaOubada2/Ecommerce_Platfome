@@ -1,4 +1,4 @@
-import { Order } from "src/orders/entities/orders.entity";
+import { Order } from "src/orders/entities/order.entity";
 import { Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
 export enum Role {
