@@ -126,7 +126,7 @@ export default function CartDrawer({ open, onClose }: Props) {
                       </button>
                     </div>
                     <p className="text-sm font-semibold text-gray-900">
-                      ${(product.price * quantity).toFixed(2)}
+                      ${(Number(product.price) * quantity).toFixed(2)}
                     </p>
                   </div>
                 </div>
